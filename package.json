@@ -1,0 +1,27 @@
+{
+  "name": "TwiTube",
+  "version": "1.0.0",
+  "description": "Download de videos do YouTube postados no twitter",
+  "main": "download.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "twit": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EvandroZanatta/TwiTube.git"
+  },
+  "keywords": [
+    "YouTube"
+  ],
+  "author": "Evandro Zanatta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvandroZanatta/TwiTube/issues"
+  },
+  "homepage": "https://github.com/EvandroZanatta/TwiTube"
+}
