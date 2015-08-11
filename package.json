@@ -5,6 +5,7 @@
   "main": "download.js",
   "dependencies": {
     "express": "^4.13.3",
+    "redis": "^0.12.1",
     "twit": "^2.1.0"
   },
   "devDependencies": {},
