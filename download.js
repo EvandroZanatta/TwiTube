@@ -16,25 +16,34 @@ var T = new Twit({
   , access_token_secret:  'BGlrk0QB5EXgcyfhz8MqTV4Aey8JYMIEtZ2QAhgLxknyH'
 })
 
-T.get('search/tweets', { q: 'youtube.com from:sonteam', count: 10 }, function(err, data, response) {
-  //console.log(data.statuses[0].entities.urls[0].expanded_url);
-  /*for (var i in data.statuses) {
-    var val = data.statuses[i];
-    console.log(val+'\n');
-  }*/
-  //console.log(data.statuses.id);
-  //console.log(data.statuses[0].entities);
-  console.log(data.statuses[0].entities.urls[0]);
+process.chdir('music/');
+
+T.get('search/tweets', { q: 'youtube.com musica lang:pt', count: 5 }, function(err, data, response) {
+  for (var i in data.statuses) {
     
-  process.chdir('music/');
-  
-  child = exec('youtube-dl --extract-audio --audio-format mp3 '+data.statuses[0].entities.urls[0].expanded_url,
+    var val = data.statuses[i].user.name;
+    console.log('Baixando a musica de '+val);
+    
+    child = exec('youtube-dl --extract-audio --audio-format mp3 '+data.statuses[i].entities.urls[0].expanded_url,
     function (error, stdout, stderr) {
-      console.log('stdout: ' + stdout);
+      //console.log('stdout: ' + stdout);
       if (error !== null) {
         console.log('exec error: ' + error);
       }
-  });
+    });
+  }
+  //console.log(data.statuses[0].user);
+  //console.log(data.statuses[0].entities);
+  //console.log(data.statuses[0].entities.urls[0]);
+  
+  /*child = exec('youtube-dl --extract-audio --audio-format mp3 '+data.statuses[0].entities.urls[0].expanded_url,
+    function (error, stdout, stderr) {
+      //console.log('stdout: ' + stdout);
+      console.log('Baixando a musica');
+      if (error !== null) {
+        console.log('exec error: ' + error);
+      }
+  });*/
   
   /*
   process.chdir('music/');
