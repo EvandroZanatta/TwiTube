@@ -13,16 +13,15 @@ app.get('/', function(req, res) {
 app.get('/download/*', function(req, res) {
     
     var link = req.query.link;
+    console.log(link);
     
     console.log('Baixando: '+link);
     process.chdir('music/');
-    /* var linkmusic = link; */
-    var linkmusic = 'https://www.youtube.com/watch?v=wsrvmNtWU4E';
+    /*var linkmusic = 'https://www.youtube.com/watch?v=wsrvmNtWU4E';*/
     
-    child = exec('youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" --restrict-filenames ' + linkmusic,
+    child = exec('youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" --restrict-filenames ' + link,
         function(error, stdout, stderr) {
             var dados = stdout.split("\n");
-            console.log(dados);
             var infoFolder = dados[7];
             var localFile = infoFolder.split('estination: ');
             var response = {local: "/music/" + localFile[1]}
