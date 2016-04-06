@@ -38,7 +38,7 @@ formDownload.addEventListener("submit", function(e){
     
     var urlVideo = document.getElementById('fieldLink').value;
     
-    xhr.open("GET", "https://twitube-evandrozanatta.c9.io/download/?link="+urlVideo);
+    xhr.open("GET", "https://downtube-evandrozanatta.c9users.io/download/?link="+urlVideo);
     
     xhr.send(data);
     

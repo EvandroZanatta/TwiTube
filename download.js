@@ -22,7 +22,7 @@ app.get('/download/*', function(req, res) {
     child = exec('youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" --restrict-filenames ' + link,
         function(error, stdout, stderr) {
             var dados = stdout.split("\n");
-            var infoFolder = dados[7];
+            var infoFolder = dados[5];
             var localFile = infoFolder.split('estination: ');
             var response = {local: "/music/" + localFile[1]}
             res.jsonp(response);
