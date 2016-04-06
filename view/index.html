@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>DownTube</title>
+    <link rel="stylesheet" href="/static/index.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+    
+    <header class="header-site">
+        <h1>DownTube</h1>
+    </header>
+    
+    <section id="showMain" class="main boxsection-style">
+        <h2>Suas musicas, do seu YouTube, todas aqui!</h2>
+        <form id="formDownload"> 
+            <label for="fieldLink">Link do video
+                <input type="url" id="fieldLink" class="field-link" name="link" placeholder="https://www.youtube.com/watch?v=qEja72NSg5Q">
+            </label>
+            <input type="submit" class="button-download" id="button-download" value="Gerar" >
+        </form>
+    </section>
+    
+    <section id="showResult" class="show-result boxsection-style">
+        
+        <span class="music-sucess">Sua música está pronta!</span>
+        <div class="box-player">
+            <p>Ouça agora</p>
+            <audio controls class="player" id="player" autoplay>
+              Your browser does not support the audio element.
+            </audio>
+        </div>
+        <a href="#" download>ou clique aqui para baixar</a>
+    </section>
+    
+</body>
+<script type="text/javascript" src="/static/index.js"></script>
+</html>

@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
     res.sendfile('view/index.html');
 });
 
-app.get('/dowload/*', function(req, res) {
+app.get('/download/*', function(req, res) {
     
     var link = req.query.link;
     
@@ -22,6 +22,7 @@ app.get('/dowload/*', function(req, res) {
     child = exec('youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" --restrict-filenames ' + linkmusic,
         function(error, stdout, stderr) {
             var dados = stdout.split("\n");
+            console.log(dados);
             var infoFolder = dados[7];
             var localFile = infoFolder.split('estination: ');
             var response = {local: "/music/" + localFile[1]}
