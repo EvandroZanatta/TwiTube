@@ -15,6 +15,10 @@ formDownload.addEventListener("submit", function(e){
         var elAudio = document.getElementById("player");
         elAudio.setAttribute('src', response.local);
         elAudio.play();
+        
+        var linkdDownload = document.getElementById('downloadLink');
+        linkdDownload.setAttribute('href', response.local);
+        
         var boxMain = document.getElementById('showMain');
         var boxResult = document.getElementById('showResult');
         

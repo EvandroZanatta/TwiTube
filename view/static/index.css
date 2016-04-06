@@ -98,4 +98,13 @@ section.main .button-download {
     text-align: center;
     margin: 10px 0; }
 
+.new-download {
+  background: #10B743;
+  width: 160px;
+  line-height: 30px;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 0 auto !important; }
+
 /*# sourceMappingURL=index.css.map */
